@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cal function</title>
+
+    <style>
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            padding-top: 50px;
+            padding-inline: 15px;
+        }
+
+        form {
+            background-color: #f2f3f7;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 35px;
+            text-align: center;
+            margin: auto;
+            max-width: 500px;
+            min-height: 500px;
+            border-radius: 3px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        input {
+            border: 2px solid #e5e6e8;
+            padding: 12px;
+            border-radius: 3px;
+            width: 100%;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #58b358;
+        }
+
+        input::placeholder {
+            opacity: 70%;
+        }
+
+        button {
+            background-image: linear-gradient(to bottom, #58b358, #459a45);
+            color: #fbfbf1;
+            border: none;
+            padding: 12px;
+            border-radius: 3px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-image: linear-gradient(to bottom, #4cae4ca2, #459a45);
+        }
+
+
+        .column {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .label-input {
+            padding-inline: 5px;
+            text-align: left;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .firstnamerow {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            width: 100%;
+        }
+
+        #shownumberloop {
+            text-align: left;
+        }
+
+        @media (max-width: 480px) {
+            .firstnamerow {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form id="calculateForm" action="" novalidate>
+            <div class="firstnamerow">
+                <div class="divflex column">
+                    <div class="label-input" id="lastNameError">Use number</div>
+                    <input type="number" value="1" id="usenumber" placeholder="usenumber">
+                </div>
+                <div class="divflex column">
+                    <div class="label-input" id="lastNameError">Max show number</div>
+                    <input type="number" value="4" id="maxshownumber" placeholder="maxshownumber">
+                </div>
+                <div class="divflex column">
+                    <div class="label-input" id="lastNameError">Loop number</div>
+                    <input type="number" value="3" id="roundnumber" placeholder="roundnumber">
+                </div>
+            </div>
+            <button type="submit">Show Result</button>
+            <pre id="shownumberloop"></pre>
+        </form>
+    </main>
+</body>
+
+</html>
