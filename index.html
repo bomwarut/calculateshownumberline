@@ -123,6 +123,37 @@
             <pre id="shownumberloop"></pre>
         </form>
     </main>
+    <script>
+        const form = document.getElementById('calculateForm');
+        const usenumber = document.getElementById('usenumber');
+        const maxshownumber = document.getElementById('maxshownumber');
+        const roundnumber = document.getElementById('roundnumber');
+        const result = document.getElementById('shownumberloop');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            calfunct(usenumber.value, maxshownumber.value, roundnumber.value);
+        });
+
+        function calfunct(shownumber, maxcount, roundcount) {
+            let summarynumber = "";
+            let displaynumber = "";
+            for (let indexf = 0; indexf < roundcount; indexf++) {
+                for (let index = maxcount * 2; index > 0; index--) {
+                    if (index <= maxcount) {
+                        summarynumber = summarynumber.slice(1);
+                    } else {
+                        summarynumber += shownumber;
+                    }
+                    if (index !== 1) {
+                        displaynumber += summarynumber + "\n";
+                    }
+                }
+            }
+            result.innerHTML = "Result: \n" + displaynumber;
+        }
+        calfunct(usenumber.value, maxshownumber.value, roundnumber.value);
+    </script>
 </body>
 
 </html>
